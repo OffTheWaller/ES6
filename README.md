@@ -77,5 +77,50 @@ console.log(d)
 console.log(e)
 ```
 
+### 扩展运算符和rest运算符
+```javascript
+扩展运算符
+function show(...arg) {
+    console.log(arg[0])
+    console.log(arg[1])
+    console.log(arg[2])
+}
+show(1,2,3)
+
+扩展运算符解决数组引用问题
+let arr1 = ['hello', 'world'];
+let arr2 = [...arr1];
+arr2.push('hello es6');
+console.log(arr1)  //'hello', 'world'
+
+rest运算符
+function add (first, second,...arg) {
+    console.log(first)
+    console.log(second)
+}
+add(1,2,3,4,5);
+
+for of
+function add (first, second,...arg) {
+    for (let a of arg) {
+        console.log(a)
+    }
+}
+add(1,2,3,4,5);  //3, 4, 5
+```
+
+### 模板字符串
+```javascript
+模板字符串
+var name = 'jack';
+var total = `this is ${name}`
+console.log(total)
+
+字符串的方法
+let str1 = 'abcdefg'
+let str2 = 'abc'
+console.log(str1.includes(str2))  //true
+console.log(str1.startsWith(str2)) //true，还有endsWith一样的使用方法
+```
 
 
