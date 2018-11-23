@@ -1,34 +1,61 @@
-//二进制声明
-let binary = 0B10101;
-console.log(binary);   //21
-console.log('------------------------------------')
+// json数组格式，利用Array.from()方法
+// let json = {
+//     "0": "name",
+//     "1": "age",
+//     "2": "sex",
+//     length: 3
+// }
+// var arr = Array.from(json)
+// console.log(arr)
 
-//八进制声明
-let b = 0o21;
-console.log(b)  //17
-console.log('------------------------------------')
+// 这种形式的就不行，属性名必须是0,1,2这样的索引形式，并且必须有length属性
+// let json = {
+//     "name": "jack",
+//     "age": "18",
+//     "sex": "male",
+//     length: 3
+// }
+// var arr = Array.from(json)
+// console.log(arr)
 
-//数字验证Number.isFinite()，数字会返回true
-let num = 3.55;
-console.log(Number.isFinite(num))  //true
-console.log(Number.isFinite('num'))  //false
-console.log(Number.isFinite(NaN))  //false
-console.log(Number.isFinite(undefined))  //false
-console.log('------------------------------------')
+// Array.of()方法，把传入的数字或者字符串转换成数组
+// var arr = Array.of(1,2,3,4,5)
+// console.log(arr)
 
-//判断是否为NaN
-let num2 = 123;
-console.log(Number.isNaN(num2))
-console.log('------------------------------------')
+// var arrStr = Array.of('hello', 'es6', 'world')
+// console.log(arrStr)
 
-//判断是否为整数
-let num3 = 11.2;
-console.log(Number.isInteger(num3))
-console.log('------------------------------------')
+// find()实例方法，实例方法不是Array的方法，是一个真实数组的方法
+// let arr=[1,2,3,4,5,6,7,8,9];
+// console.log(arr.find(function(value,index,arr){
+//     return value > 5;
+// }))
 
-//最大安全整数
-console.log(Number.MAX_SAFE_INTEGER)
-console.log('------------------------------------')
+// fill()实例方法
+// let arr = [1,2,3,4,5,6];
+// arr.fill('hello',1,4)
+// console.log(arr)  //[1, "hello", "hello", "hello", 5, 6]
 
-let num4 = Math.pow(2,53) -1;
-console.log(Number.isSafeInteger(num4))
+// for of循环
+// let arr = ['hello','world','es6','vue'];
+// for (let item of arr) {
+//     console.log(item)
+// }
+
+// 打出索引
+// let arr = ['hello','world','es6','vue'];
+// for (let index of arr.keys()) {
+//     console.log(index)
+// }
+
+// 同时打出索引和值，用entries()方法
+// let arr = ['hello','world','es6','vue'];
+// for (let [index,item] of arr.entries()) {
+//     console.log(index+":"+item)
+// }
+
+// entries()返回一个iterator迭代器，可以手动使用next()
+// let arr = ['hello','world','es6','vue'];
+// let list = arr.entries();
+// console.log(list)  //Array Iterator {}
+// console.log(list.next().value)  //[0, "hello"]
