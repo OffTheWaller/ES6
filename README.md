@@ -255,3 +255,75 @@ var add = (a,b) => {
 }
 console.log(add(1,2))
 ```
+
+### 函数及数组
+```javascript
+对象的函数解构
+let json = {
+    "a": "111",
+    "b": "222"
+}
+function fun ({a,b}) {
+    console.log(a)
+    console.log(b)
+}
+fun(json)
+
+数组的函数解构
+let arr = ['a','b','c']
+function fun (a,b,c) {
+    console.log(a)
+    console.log(b)
+    console.log(c)
+}
+fun(...arr)
+
+in用来判断数组或对象中是否含有元素
+let json = {
+    "a": "111",
+    "b": "222"
+}
+console.log('a' in json)  //true
+
+这里判断的是是不是在0索引上有元素
+let arr = ['a', 'b']
+console.log(0 in arr)  //true
+console.log(1 in arr)  //true
+console.log(2 in arr)  //false
+
+数组的遍历方法：forEach()  filter()  some()  map()
+
+数组转换成字符串 join()和toString()
+let arr = ['web','javascript','html']
+console.log(arr.join('|'))  //用|分隔
+console.log(arr.toString())  //用逗号分隔
+
+```
+
+### ES6对象
+```javascript
+对象赋值
+let name = 'hello'
+let age = 19
+let person = {name, age}
+console.log(person)  //{name: "hello", age: 19}
+
+对象key值构建，当对象的key值为变量(从后台获取时)
+let key = 'name';
+var obj = {
+    [key]: 'javascript'
+}
+console.log(obj.name)
+
+Object.js()方法比较两个对象是否相等
+
+Object.assign()方法合并对象
+let a = {
+    name: 'java'
+}
+let b = {
+    age: 19
+}
+let c = Object.assign(a,b)
+console.log(c)  //{name: "java", age: 19}
+```

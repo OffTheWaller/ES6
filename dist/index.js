@@ -1,30 +1,26 @@
 'use strict';
 
-//es6中主动抛出错误,es6中并且可以抛出默认值
-// function add (a, b=1) {
-//     if (a == 0) {
-//         throw new Error('a can not be 0')
-//     } else {
-//         return a + b
-//     }
+//对象赋值
+// let name = 'hello'
+// let age = 19
+// let person = {name, age}
+// console.log(person)  //{name: "hello", age: 19}
+
+//对象key值构建，当对象的key值为变量(从后台获取时)
+// let key = 'name';
+// var obj = {
+//     [key]: 'javascript'
 // }
-// console.log(add(0))
+// console.log(obj.name)
 
-//如果形参使用了默认值，再使用'use strict'，就会报错，必须取消使用默认值
+//Object.js()方法比较两个对象是否相等
 
-//es6使用 函数名.length可以获取到必须传入的参数个数
-// function add (a, b=1) {
-//     if (a == 0) {
-//         throw new Error('a can not be 0')
-//     } else {
-//         return a + b
-//     }
-// }
-// console.log(add.length)  //这里为1因为使用了默认值
-
-//箭头函数
-var add = function add(a, b) {
-    console.log('两句话必须加{}');
-    return a + b;
+//Object.assign()方法合并对象
+var a = {
+    name: 'java'
 };
-console.log(add(1, 2));
+var b = {
+    age: 19
+};
+var c = Object.assign(a, b);
+console.log(c);
