@@ -1,26 +1,27 @@
 'use strict';
 
-//对象赋值
-// let name = 'hello'
-// let age = 19
-// let person = {name, age}
-// console.log(person)  //{name: "hello", age: 19}
+//Symbol
+// let a = Symbol('hello')
+// console.log(a)  //红色
+// console.log(a.toString())  //黑色
 
-//对象key值构建，当对象的key值为变量(从后台获取时)
-// let key = 'name';
+//Symbol当做对象的key
+// let key = Symbol();
 // var obj = {
 //     [key]: 'javascript'
 // }
-// console.log(obj.name)
+// console.log(obj[key])
+// obj[key] = 'html'
+// console.log(obj[key])
 
-//Object.js()方法比较两个对象是否相等
-
-//Object.assign()方法合并对象
-var a = {
-    name: 'java'
+//Symbol对对象属性的保护
+var obj = {
+    name: 'zhang'
 };
-var b = {
-    age: 19
-};
-var c = Object.assign(a, b);
-console.log(c);
+var age = Symbol();
+obj[age] = 18;
+console.log(obj);
+console.log('----------------');
+for (var item in obj) {
+    console.log(item);
+}
